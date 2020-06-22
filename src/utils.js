@@ -24,7 +24,6 @@ const forecast = (lat, lon, callback) => {
         } else if (body.error) {
             callback('Please enter a correct location!', undefined);
         } else {
-
             callback(undefined, body.current.weather_descriptions[0] + " It's currently " + body.current.temperature + " out, it feels like " + body.current.feelslike + " now. Wind speed: " + body.current.wind_speed);
         }
     })
