@@ -9,7 +9,7 @@ const public = path.join(__dirname, '../public');
 const partialsPath = path.join(__dirname, '../templates/partials');
 
 const app = express();
-
+const port = process.env.PORT || 3000;
 // Setup static directory to serve
 app.use(express.static(public))
 
@@ -80,6 +80,6 @@ app.get('*', (req, res) => {
         errorMessage: '404 Not Found'
     })
 });
-app.listen(3000, () => {
-    console.log('Server started')
+app.listen(port, () => {
+    console.log('Server started' + port)
 });
