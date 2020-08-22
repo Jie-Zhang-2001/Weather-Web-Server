@@ -36,10 +36,10 @@ app.get('/help', (req, res) => {
         title: 'Help Page',
         help: 'Help Message',
         name: 'Zhang Jie',
-        contact: 3476517406
     })
 })
 app.get('/weather', (req, res) => {
+    console.log(req.query.address);
     if (!req.query.address) {
         return res.send({
             error: 'Please specify an address!'
